@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#05091f">
+  <title>NEON RUSH 3D</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
+</head>
+<body>
+  <div id="game-root">
+    <canvas id="game-canvas"></canvas>
+    <header class="hud">
+      <div class="brand">NEON <span>RUSH</span><small>3D</small></div>
+      <div class="stats"><span>◉ <b id="coins">0</b></span><span>SCORE <b id="score">0</b></span></div>
+      <button id="pause-btn" class="hud-btn" aria-label="Pause">Ⅱ</button>
+    </header>
+
+    <section id="home-screen" class="overlay">
+      <div class="panel home-panel">
+        <p class="eyebrow">NIGHT CITY • ENDLESS DRIVE</p>
+        <h1>NEON <span>RUSH</span><small>3D</small></h1>
+        <p class="sub">DODGE • COLLECT • SURVIVE</p>
+        <button id="play-btn" class="primary">▶ START RUN</button>
+        <button id="how-btn" class="secondary">HOW TO PLAY</button>
+        <p class="micro">Move left/right to dodge traffic and collect coins.</p>
+      </div>
+    </section>
+
+    <section id="pause-screen" class="overlay hidden">
+      <div class="panel">
+        <p class="eyebrow">TAKE A BREATHER</p><h2>PAUSED</h2>
+        <button id="resume-btn" class="primary">▶ RESUME</button>
+        <button id="home-btn" class="secondary">⌂ HOME</button>
+      </div>
+    </section>
+
+    <section id="over-screen" class="overlay hidden">
+      <div class="panel">
+        <p class="eyebrow">RUN COMPLETE</p><h2>GAME OVER</h2>
+        <div class="result">SCORE <strong id="final-score">0</strong><br>BEST <strong id="best-score">0</strong></div>
+        <button id="ad-btn" class="reward">▶ WATCH AD · BONUS COINS</button>
+        <p id="ad-status" class="micro">Connect your Adsgram block ID to enable live ads.</p>
+        <button id="retry-btn" class="primary">↻ PLAY AGAIN</button>
+        <button id="over-home-btn" class="secondary">⌂ HOME</button>
+      </div>
+    </section>
+
+    <div class="touch-controls">
+      <button id="left-btn" aria-label="Move left">‹</button>
+      <button id="right-btn" aria-label="Move right">›</button>
+      <button id="jump-btn" aria-label="Boost">⇧</button>
+    </div>
+    <div id="toast" class="toast hidden"></div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
